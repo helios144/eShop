@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.7.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Dec 15, 2017 at 09:46 AM
+- Server version: 10.1.26-MariaDB
+- PHP Version: 7.1.9
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="prekes" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="atributai_kategorijai">
+                CREATE TABLE `atributai_kategorijai` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `kategorijos_id` int(11) NOT NULL,
+                  `preke_id` int(11) NOT NULL,
+                  `atributas_id` int(11) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="atributu_sarasas">
+                CREATE TABLE `atributu_sarasas` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `kategorijos_ID` int(11) NOT NULL,
+                  `atributas` varchar(20) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="cart">
+                CREATE TABLE `cart` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `user_id` int(11) NOT NULL,
+                  `cart` longtext NOT NULL,
+                  `Status` varchar(30) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="kategorijos">
+                CREATE TABLE `kategorijos` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `Kategorija` varchar(50) NOT NULL,
+                  `preke_id` int(11) NOT NULL,
+                  PRIMARY KEY (`ID`),
+                  UNIQUE KEY `preke_id` (`preke_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="kategoriju_sarasas">
+                CREATE TABLE `kategoriju_sarasas` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `kategorija` varchar(50) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="prekes">
+                CREATE TABLE `prekes` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(250) NOT NULL,
+                  `description` text NOT NULL,
+                  `kaina` float NOT NULL,
+                  `nuotrauka` varchar(6500) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `User_name` varchar(20) NOT NULL,
+                  `Password` varchar(15) NOT NULL,
+                  `Privileges` int(11) NOT NULL,
+                  `Country` varchar(20) DEFAULT NULL,
+                  `FirstName` varchar(20) DEFAULT NULL,
+                  `LastName` varchar(20) DEFAULT NULL,
+                  `Address` varchar(50) DEFAULT NULL,
+                  `City` varchar(20) DEFAULT NULL,
+                  `Zip` int(10) DEFAULT NULL,
+                  `Phone` varchar(15) DEFAULT NULL,
+                  `Email` varchar(50) DEFAULT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'prekes'
+    -->
+    <database name="prekes">
+        <!-- Table atributai_kategorijai -->
+        <table name="atributai_kategorijai">
+            <column name="ID">1</column>
+            <column name="kategorijos_id">5</column>
+            <column name="preke_id">44</column>
+            <column name="atributas_id">3</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">2</column>
+            <column name="kategorijos_id">4</column>
+            <column name="preke_id">47</column>
+            <column name="atributas_id">1</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">3</column>
+            <column name="kategorijos_id">4</column>
+            <column name="preke_id">49</column>
+            <column name="atributas_id">2</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">4</column>
+            <column name="kategorijos_id">4</column>
+            <column name="preke_id">54</column>
+            <column name="atributas_id">1</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">5</column>
+            <column name="kategorijos_id">5</column>
+            <column name="preke_id">52</column>
+            <column name="atributas_id">5</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">6</column>
+            <column name="kategorijos_id">5</column>
+            <column name="preke_id">53</column>
+            <column name="atributas_id">3</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">7</column>
+            <column name="kategorijos_id">6</column>
+            <column name="preke_id">50</column>
+            <column name="atributas_id">8</column>
+        </table>
+        <table name="atributai_kategorijai">
+            <column name="ID">8</column>
+            <column name="kategorijos_id">6</column>
+            <column name="preke_id">51</column>
+            <column name="atributas_id">9</column>
+        </table>
+        <!-- Table atributu_sarasas -->
+        <table name="atributu_sarasas">
+            <column name="ID">1</column>
+            <column name="kategorijos_ID">4</column>
+            <column name="atributas">Clay</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">2</column>
+            <column name="kategorijos_ID">4</column>
+            <column name="atributas">Plastic</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">3</column>
+            <column name="kategorijos_ID">5</column>
+            <column name="atributas">Plastic</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">4</column>
+            <column name="kategorijos_ID">5</column>
+            <column name="atributas">Plastic Coated</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">5</column>
+            <column name="kategorijos_ID">5</column>
+            <column name="atributas">Plastic Cellulose</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">8</column>
+            <column name="kategorijos_ID">6</column>
+            <column name="atributas">6-seats</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">9</column>
+            <column name="kategorijos_ID">6</column>
+            <column name="atributas">9-seats</column>
+        </table>
+        <table name="atributu_sarasas">
+            <column name="ID">10</column>
+            <column name="kategorijos_ID">0</column>
+            <column name="atributas">Select new attribute</column>
+        </table>
+        <!-- Table cart -->
+        <table name="cart">
+            <column name="ID">1</column>
+            <column name="user_id">1</column>
+            <column name="cart">select id,5 as quant from prekes where id=&quot;44&quot; union select id,2 as quant from prekes where id=&quot;47&quot; union select id,1 as quant from prekes where id=&quot;49&quot;</column>
+            <column name="Status">Approved</column>
+        </table>
+        <table name="cart">
+            <column name="ID">2</column>
+            <column name="user_id">2</column>
+            <column name="cart">select id,1 as quant from prekes where id=&quot;44&quot; union select id,1 as quant from prekes where id=&quot;47&quot; union select id,1 as quant from prekes where id=&quot;49&quot;</column>
+            <column name="Status">Approved</column>
+        </table>
+        <!-- Table kategorijos -->
+        <table name="kategorijos">
+            <column name="ID">7</column>
+            <column name="Kategorija">Chips</column>
+            <column name="preke_id">43</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">8</column>
+            <column name="Kategorija">Playing Cards</column>
+            <column name="preke_id">44</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">9</column>
+            <column name="Kategorija">Chips</column>
+            <column name="preke_id">45</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">10</column>
+            <column name="Kategorija">Playing Cards</column>
+            <column name="preke_id">46</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">11</column>
+            <column name="Kategorija">Chips</column>
+            <column name="preke_id">47</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">12</column>
+            <column name="Kategorija">Playing Cards</column>
+            <column name="preke_id">48</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">13</column>
+            <column name="Kategorija">Chips</column>
+            <column name="preke_id">49</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">14</column>
+            <column name="Kategorija">Poker Tables</column>
+            <column name="preke_id">50</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">15</column>
+            <column name="Kategorija">Poker Tables</column>
+            <column name="preke_id">51</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">16</column>
+            <column name="Kategorija">Playing Cards</column>
+            <column name="preke_id">52</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">17</column>
+            <column name="Kategorija">Playing Cards</column>
+            <column name="preke_id">53</column>
+        </table>
+        <table name="kategorijos">
+            <column name="ID">18</column>
+            <column name="Kategorija">Chips</column>
+            <column name="preke_id">54</column>
+        </table>
+        <!-- Table kategoriju_sarasas -->
+        <table name="kategoriju_sarasas">
+            <column name="ID">4</column>
+            <column name="kategorija">Chips</column>
+        </table>
+        <table name="kategoriju_sarasas">
+            <column name="ID">5</column>
+            <column name="kategorija">Playing Cards</column>
+        </table>
+        <table name="kategoriju_sarasas">
+            <column name="ID">6</column>
+            <column name="kategorija">Poker Tables</column>
+        </table>
+        <!-- Table prekes -->
+        <table name="prekes">
+            <column name="ID">44</column>
+            <column name="name">KING  &quot;PRESTIGE&quot;</column>
+            <column name="description">KING &quot;PRESTIGE&quot; PLAYING CARDS SINGLE DECK RED</column>
+            <column name="kaina">14.99</column>
+            <column name="nuotrauka">imgg/img_0205_1b.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">47</column>
+            <column name="name">500PCE AUSSIE$ 13.5G CHIP SET</column>
+            <column name="description">500PCE AUSSIE$ 13.5G CHIP SET</column>
+            <column name="kaina">129.99</column>
+            <column name="nuotrauka">imgg/aud-clay-group.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">49</column>
+            <column name="name">500PCE TOURNAMENT POKER 13.5G CHIP SET</column>
+            <column name="description">500PCE TOURNAMENT POKER 13.5G CHIP SET</column>
+            <column name="kaina">159.99</column>
+            <column name="nuotrauka">imgg/20160817_105840b.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">50</column>
+            <column name="name">X2 MINI POKER TABLE + DINING TABLE</column>
+            <column name="description">Serious dining style with a poker problem
+The X2 Mini sets the bar for stylish, incognito poker dining tables! We modeled the X2 Mini after our HUGE professional Casino X2 table but brought the scale down to a manageable, real-world size. We then designed a stylish dining top to bring you the ultimate in convertible dining/poker action.
+- Poker table Dimensions: 71.5 in x 44.5 in x 30 inches
+- Dining table Dimensions: 74.5 in x 47.5 in x 33 inches (included)</column>
+            <column name="kaina">2500</column>
+            <column name="nuotrauka">imgg/x2mini1250ls4.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">51</column>
+            <column name="name">90  BLACK TOURNAMENT POKER TABLE</column>
+            <column name="description">Step up in class with this 10 player 90  Tournament Texas Hold Em Poker Table.
+
+
+Features a Padded water resistant black marine grade vinyl armrest surrounds the table, providing hours of comfort and enjoyment.</column>
+            <column name="kaina">799</column>
+            <column name="nuotrauka">imgg/tb2.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">52</column>
+            <column name="name">KEM ARROW BLACK &amp; GOLD (POKER/JUMBO)</column>
+            <column name="description">100% cellulose acetate plastic, your Kem cards will remain attractive and flexible through the most rigorous of use. These cards are scuff and break resistant and completely washable. Arrow Black &amp; Gold, Poker Size / Jumbo Index. (2 decks)</column>
+            <column name="kaina">59</column>
+            <column name="nuotrauka">imgg/kem-arrow-poker-feature2.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">53</column>
+            <column name="name">48 X TEXAS HOLDEM 100% PLASTIC PLAYING CARDS</column>
+            <column name="description">48 x Decks of Texas Holdem 100% Plastic Poker Size / Jumbo Index (2 1/2 x 3 1/2 inch).</column>
+            <column name="kaina">189.99</column>
+            <column name="nuotrauka">imgg/cards3.jpg</column>
+        </table>
+        <table name="prekes">
+            <column name="ID">54</column>
+            <column name="name">500 X 10G CUSTOM WORLD POKER SERIES CHIPS</column>
+            <column name="description">500 X 10G CUSTOM WORLD POKER SERIES CHIPS</column>
+            <column name="kaina">549.99</column>
+            <column name="nuotrauka">imgg/chips3.jpg</column>
+        </table>
+        <!-- Table users -->
+        <table name="users">
+            <column name="ID">1</column>
+            <column name="User_name">Root</column>
+            <column name="Password">123456</column>
+            <column name="Privileges">1</column>
+            <column name="Country">Lietuva</column>
+            <column name="FirstName">Saulius</column>
+            <column name="LastName">Gaiz</column>
+            <column name="Address"></column>
+            <column name="City"></column>
+            <column name="Zip">0</column>
+            <column name="Phone"></column>
+            <column name="Email"></column>
+        </table>
+        <table name="users">
+            <column name="ID">2</column>
+            <column name="User_name">Helios</column>
+            <column name="Password">999</column>
+            <column name="Privileges">0</column>
+            <column name="Country">Lietuva</column>
+            <column name="FirstName">Saulius</column>
+            <column name="LastName">Gaiz</column>
+            <column name="Address"></column>
+            <column name="City"></column>
+            <column name="Zip">0</column>
+            <column name="Phone"></column>
+            <column name="Email"></column>
+        </table>
+    </database>
+</pma_xml_export>
